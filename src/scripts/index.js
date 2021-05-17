@@ -2,7 +2,7 @@
 
 // function (timer) counting backwards – default 00:00
 // function (startTime) that sets time of task(OMAR)
-
+const starttime = (e) => {};
 // function (stopTime) that stops task >> alert "are you sure? only _____ minutes left" (CATHA)
 
 // list items need buttons and timer
