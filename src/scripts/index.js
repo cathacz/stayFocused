@@ -1,5 +1,5 @@
 // function (createTask) for "create task" to create new task in ul (ANGELOS)
-
+const createTask = () => {};
 // function (timer) counting backwards – default 00:00
 // function (startTime) that sets time of task(OMAR)
 
