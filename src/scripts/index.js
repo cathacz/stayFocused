@@ -34,12 +34,15 @@ const createTask = (e) => {
     // Adding class
 
     kstart.classList.add("done");
-    // Complete function
 
-    // Complete function
-    // toggle will check if the class name exist, will remove it and if it's not will add it
+    // function (stopTime) that stops task >> alert "are you sure? only _____ minutes left" (CATHA)
+    const stopTime = () => {
+      let messageForAlert = `are you sure? only ${timing.innerHTML}  left`;
+      alert(messageForAlert);
+    };
+    kstop.addEventListener("click", stopTime);
   } else {
-    document.querySelector("#myData").placeholder = "write here your task...";
+    document.querySelector("input").placeholder = "write here your task...";
   }
 };
 const keyCheck = (e) => {
@@ -63,28 +66,27 @@ let rangeValue = function () {
 range.addEventListener("input", rangeValue);
 
 // function (startTime) that sets time of task(OMAR)
-const startTimer = (duration, display) => {
-  let timer = duration,
-    minutes,
-    seconds;
-  setInterval(function () {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
+// const startTimer = (duration, display) => {
+//   let timer = duration,
+//     minutes,
+//     seconds;
+//   setInterval(function () {
+//     minutes = parseInt(timer / 60, 10);
+//     seconds = parseInt(timer % 60, 10);
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    display.textContent = minutes + ":" + seconds;
-    if (--timer < 0) {
-      timer = duration;
-    }
-  }, 1000);
-};
-window.onload = function () {
-  let inputUser = 60 * 1,
-    display = document.querySelector("#time");
-  startTimer(inputUser, display);
-};
-// function (stopTime) that stops task >> alert "are you sure? only _____ minutes left" (CATHA)
+//     minutes = minutes < 10 ? "0" + minutes : minutes;
+//     seconds = seconds < 10 ? "0" + seconds : seconds;
+//     display.textContent = minutes + ":" + seconds;
+//     if (--timer < 0) {
+//       timer = duration;
+//     }
+//   }, 1000);
+// };
+// window.onload = function () {
+//   let inputUser = 60 * 1,
+//     display = document.querySelector("#time");
+//   startTimer(inputUser, display);
+// };
 
 // list items need buttons and timer
 
