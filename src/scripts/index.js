@@ -27,7 +27,28 @@ window.onload = function () {
 
 // list items need buttons and timer
 
-// function (endDay) percentage of how much is been a accomplished (ALEX)
+/* END DAY FUNCTION (ALEX) */
+//selectors
+const endBtn = document.querySelector(".endDay");
 
+//functions
+function endDay() {
+  var str = prompt("are you sure? please type yes or no");
+  let strToLowerCase = str.toLowerCase();
+  if (strToLowerCase.includes("yes")) {
+    alert("Thank You for trying! But do better next time!");
+    //show percentage
+    // function showPercentage () {
+    //    let sumTotalTime =  ? //Need "Create Task" variables from Angelos;
+    //    return totalTime;
+    // }
+  } else {
+    // return back
+    alert("good decision! let's finish these tasks!");
+  }
+}
+
+//events
+endBtn.addEventListener("click", endDay);
 // connect everything so it actually works :)
 // >> do that together – before merging!
