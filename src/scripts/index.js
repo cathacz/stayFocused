@@ -5,17 +5,16 @@ const createTask = (e) => {
 
   if (myData != "") {
     let myTime = document.querySelector(".timer").value;
-    console.log(myTime);
-    // ftiaxnoume ena li
+
     let newTask = document.createElement("li");
-    //rixnoume to text pou egrapse o user sto input mas
+
     let texti = document.createTextNode(myData);
-    //vazoume me .appendChild() to text tou giouzer mesa sto list mas
+
     newTask.appendChild(texti);
-    //vazoume me .appendChild() to list item mas mesa sto taskList mas
+
     document.querySelector(".taskList").appendChild(newTask);
     document.querySelector("input").value = "";
-    //ftiaxnoume divaki me 2 koubia
+
     const newbox = document.createElement("div");
     newbox.classList.add("basics");
     const kstart = document.createElement("button");
@@ -45,7 +44,7 @@ const createTask = (e) => {
 };
 const keyCheck = (e) => {
   //console.log(event);
-  if (e.key == "Enter") addToGamwlist(e);
+  if (e.key == "Enter") createTask(e);
 };
 document.querySelector("form").addEventListener("submit", createTask);
 
