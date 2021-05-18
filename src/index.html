@@ -28,10 +28,14 @@
         <div class="nameTask">
           <input type="text" placeholder="Name your task" />
         </div>
+        <div class="duration">Time: <span class="value">25</span> minutes</div>
         <div class="setTime">
           <input type="range" min="5" max="55" value="25" />
         </div>
         <div><button>Create Task</button></div>
+        <div>
+          Task will be complete in <span id="time">01:00</span> minutes!
+        </div>
       </div>
       <div class="timer">
         <div class="displayAnimation"></div>
@@ -42,7 +46,6 @@
       </div>
       <div class="endDay"><button>End Day</button></div>
     </main>
-    <div>Task will be complete in <span id="time">01:00</span> minutes!</div>
 
     <script src="./scripts/index.js"></script>
   </body>

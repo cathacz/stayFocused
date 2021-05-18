@@ -1,6 +1,19 @@
 // function (createTask) for "create task" to create new task in ul (ANGELOS)
 
 // function (timer) counting backwards – default 00:00
+
+// function of input range for time input (Omar)
+
+let range = document.querySelector('input[type="range"]');
+
+let rangeValue = function () {
+  let newValue = range.value;
+  let target = document.querySelector(".value");
+  target.innerHTML = newValue;
+};
+
+range.addEventListener("input", rangeValue);
+
 // function (startTime) that sets time of task(OMAR)
 const startTimer = (duration, display) => {
   let timer = duration,
