@@ -1,19 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial;
-}
 main {
   width: 65vw;
   border: cadetblue 2px dashed;
   margin-top: 5vh;
+}
+
+.duration {
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+}
+input[type="range"] {
+  display: flex;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  width: 250px;
+  height: 5px;
+  border-radius: 5px;
 }
 div {
   display: flex;
