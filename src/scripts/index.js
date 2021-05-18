@@ -4,7 +4,7 @@ const createTask = (e) => {
   let myData = document.querySelector("input").value;
 
   if (myData != "") {
-    let myTime = document.querySelector(".timer").value;
+    let myTime = document.querySelector('input[type="range"]').value;
 
     let newTask = document.createElement("li");
 
@@ -20,6 +20,7 @@ const createTask = (e) => {
     const kstart = document.createElement("button");
     const kstop = document.createElement("button");
     const timing = document.createElement("div");
+
     timing.innerHTML = `${myTime} minutes`;
 
     kstart.innerHTML = "start";
@@ -31,10 +32,10 @@ const createTask = (e) => {
     newbox.appendChild(kstop);
 
     newTask.appendChild(newbox);
-    // Adding class
+    //kstart button , it starts the counter
 
     kstart.classList.add("done");
-
+    //kstart.addEventListener("click", fireTheTimer);
     // function (stopTime) that stops task >> alert "are you sure? only _____ minutes left" (CATHA)
     const stopTime = () => {
       let messageForAlert = `are you sure? only ${timing.innerHTML}  left`;
@@ -45,10 +46,12 @@ const createTask = (e) => {
     document.querySelector("input").placeholder = "write here your task...";
   }
 };
+
 const keyCheck = (e) => {
   //console.log(event);
   if (e.key == "Enter") createTask(e);
 };
+document.querySelector("form").addEventListener("submit", createTask);
 document.querySelector("form").addEventListener("submit", createTask);
 
 // function (timer) counting backwards – default 00:00
@@ -60,7 +63,7 @@ let timeondisplay = document.querySelector("#time");
 let rangeValue = function () {
   let newValue = range.value;
   let target = document.querySelector(".value");
-
+  console.log();
   target.innerHTML = newValue;
   timeondisplay.innerHTML = newValue;
 };
@@ -82,14 +85,16 @@ const startTimer = (duration, display) => {
     if (--timer < 0) {
       timer = duration;
     }
-  }, 1000 * 6);
+  }, 1000);
 };
-window.onload = function () {
-  let inputUser = 60 * 1,
-    display = document.querySelector("#time");
-  startTimer(inputUser, display);
-};
-console.log(startTimer);
+
+// window.onload = function () {
+//   let inputUser = 60 * 1,
+//     display = document.querySelector("#time");
+//   startTimer(inputUser, display);
+// };
+
+// console.log(startTimer);
 //list items need buttons and timer
 
 /* END DAY FUNCTION (ALEX) */
