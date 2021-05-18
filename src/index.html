@@ -9,28 +9,44 @@
   <body>
     <main>
       <div class="title">
-        <h1>Stay Focused</h1>
+        <!-- temporary logo -->
+        <div><img src="./img/logo.png" /></div>
+
+        <!-- changed h1 and h2 with an img logo  -->
+        <!-- <h1>Stay Focused</h1>
         <h2>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus cumque
           iusto quasi rem ad suscipit sunt porro placeat dolorem modi
           repellendus doloribus voluptates at dignissimos architecto, dolor
           cupiditate?
-        </h2>
+        </h2> -->
       </div>
+      <h3>Add new task</h3>
 
       <div class="userInput">
         <div class="nameTask">
+          <h4>Task name</h4>
           <input type="text" placeholder="Name your task" />
         </div>
+
         <div class="setTime">
+          <div>
+          <h4>Duration in minutes</h4>
+          <p>20:00</p></span>
+          </div>
           <input type="range" min="5" max="55" value="25" />
         </div>
-        <div><button>Create Task</button></div>
       </div>
+
+      <div>
+        <button>Create Task</button>
+      </div>
+
       <div class="timer">
         <div class="displayAnimation"></div>
         <div class="displayTimer"></div>
       </div>
+      <h3>Task List</h3>
       <div class="displayList">
         <ul class="taskList"></ul>
       </div>
