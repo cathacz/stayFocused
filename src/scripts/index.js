@@ -56,39 +56,41 @@ document.querySelector("form").addEventListener("submit", createTask);
 // function of input range for time input (Omar)
 
 let range = document.querySelector('input[type="range"]');
-
+let timeondisplay = document.querySelector("#time");
 let rangeValue = function () {
   let newValue = range.value;
   let target = document.querySelector(".value");
+
   target.innerHTML = newValue;
+  timeondisplay.innerHTML = newValue;
 };
 
 range.addEventListener("input", rangeValue);
 
-// function (startTime) that sets time of task(OMAR)
-// const startTimer = (duration, display) => {
-//   let timer = duration,
-//     minutes,
-//     seconds;
-//   setInterval(function () {
-//     minutes = parseInt(timer / 60, 10);
-//     seconds = parseInt(timer % 60, 10);
+//function (startTimer) that sets time of task(OMAR)
+const startTimer = (duration, display) => {
+  let timer = duration,
+    minutes,
+    seconds;
+  setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
 
-//     minutes = minutes < 10 ? "0" + minutes : minutes;
-//     seconds = seconds < 10 ? "0" + seconds : seconds;
-//     display.textContent = minutes + ":" + seconds;
-//     if (--timer < 0) {
-//       timer = duration;
-//     }
-//   }, 1000);
-// };
-// window.onload = function () {
-//   let inputUser = 60 * 1,
-//     display = document.querySelector("#time");
-//   startTimer(inputUser, display);
-// };
-
-// list items need buttons and timer
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    display.textContent = minutes + ":" + seconds;
+    if (--timer < 0) {
+      timer = duration;
+    }
+  }, 1000 * 6);
+};
+window.onload = function () {
+  let inputUser = 60 * 1,
+    display = document.querySelector("#time");
+  startTimer(inputUser, display);
+};
+console.log(startTimer);
+//list items need buttons and timer
 
 /* END DAY FUNCTION (ALEX) */
 //selectors
@@ -101,13 +103,16 @@ function endDay() {
   if (strToLowerCase.includes("yes")) {
     alert("Thank You for trying! But do better next time!");
     //show percentage
-    // function showPercentage () {
-    //    let sumTotalTime =  ? //Need "Create Task" variables from Angelos;
-    //    return totalTime;
-    // }
-  } else {
+    function showPercentage() {
+      let sumTotalTime; //Need "Create Task" variables from Angelos;
+      return sumTotalTime;
+    }
+  } else if (strToLowerCase.includes("no")) {
     // return back
     alert("good decision! let's finish these tasks!");
+  } else {
+    alert("please enter yer or not");
+    prompt(" please type yes or no");
   }
 }
 
