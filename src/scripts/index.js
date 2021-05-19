@@ -51,9 +51,9 @@ const createTask = (e) => {
     newTask.appendChild(newbox);
     //kstart button , it starts the counter
 
-    ("are you sure? only _____ minutes left");
+    ("Are you sure? You only have _____ minutes left");
     const stopTime = () => {
-      let messageForAlert = `are you sure? only ${timing.innerHTML}  left`;
+      let messageForAlert = `Are you sure? You only have ${timing.innerHTML}  left!  We believe in you!`;
       alert(messageForAlert);
     };
     kstop.addEventListener("click", stopTime);
@@ -69,7 +69,6 @@ const keyCheck = (e) => {
 
 document.querySelector("form").addEventListener("submit", createTask);
 document.querySelector("form").addEventListener("submit", createTask);
-
 
 // function (timer) counting backwards – default 00:00
 
@@ -129,10 +128,10 @@ const endBtn = document.querySelector(".endDay");
 
 //functions
 function endDay() {
-  var str = prompt("are you sure? please type yes or no");
+  var str = prompt("Are you a 100% sure? Please type yes or no");
   let strToLowerCase = str.toLowerCase();
   if (strToLowerCase.includes("yes")) {
-    alert("Thank You for trying! But do better next time!");
+    alert("At least you tried (but you crashed and burned...)");
     let ali = document.querySelectorAll("li");
     ali.forEach((el) => el.remove());
     //show percentage
@@ -142,10 +141,10 @@ function endDay() {
     }
   } else if (strToLowerCase.includes("no")) {
     // return back
-    alert("good decision! let's finish these tasks!");
+    alert("Great decision! Let's finish these tasks! You can do it!");
   } else {
-    alert("please enter yer or not");
-    prompt(" please type yes or no");
+    alert(`Please enter "yes" or "no"`);
+    prompt(`Be so kind and type "yes" or "no"`);
   }
 }
 
