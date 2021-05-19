@@ -25,36 +25,31 @@
       </div>
       <h3>Add new task</h3>
       <div class="userInput">
+      <div>
       <form>  
         <div class="nameTask">
           <h4>Task name</h4>
-          <input type="text" placeholder="Name your task" />
+          <input type="text" placeholder="  Name your task" />
         </div>
-
+      </div>
+      <div>  
         <div class="setTime">
           <div>
-          <h4>Duration in minutes </h4>
-          <p></p><span class="value"></span>
+            <span><h4>Duration in minutes</h4></span><span class="value"></span>
+           
           </div>
-          <input type="range" min="5" max="55" value="25" />
+          <div class="range-cont"><input type="range" min="5" max="55" value="25" /></div>
         </div>
-
+    </div>
       </div>
 
-      <div>
-          
-        </div>
-       
-        
-        </div>
-    
-        <div><input type="submit" value="Create Task" class="skt" /></div>
+        <div class="create-task-btn"><input type="submit" value="Create Task" class="skt" /></div>
 
       </div>
 
       <div class="timer">
         <div class="displayAnimation"></div>
-        <div class="displayTimer">Task will be complete in <span id="time">XxX</span> minutes!</div>
+        <div class="displayTimer"><span id="time">00:00</span> </div>
 
         
       </div>
