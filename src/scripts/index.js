@@ -2,6 +2,7 @@
 
 let kstart = "";
 let timing = "";
+let kstop = "";
 const createTask = (e) => {
   e.preventDefault();
   let myData = document.querySelector("input").value;
@@ -34,7 +35,8 @@ const createTask = (e) => {
       clearInterval(interval);
       startTimer(inputUser, display);
     });
-    const kstop = document.createElement("button");
+    kstop = document.createElement("button");
+    kstop.classList.add("toStopit");
     timing = document.createElement("div");
     timing.classList.add("task_time");
 
@@ -49,12 +51,29 @@ const createTask = (e) => {
     newbox.appendChild(kstop);
 
     newTask.appendChild(newbox);
-    //kstart button , it starts the counter
+    //kstop button , it deletes the task if thew user says yes
 
-    ("are you sure? only _____ minutes left");
+    // ("are you sure? only _____ minutes left");
     const stopTime = () => {
-      let messageForAlert = `are you sure? only ${timing.innerHTML}  left`;
-      alert(messageForAlert);
+      alert("are you sure? only few minutes left");
+
+      var strForStop = prompt("are you sure? please type yes or no");
+      let strToLowerCase = strForStop.toLowerCase();
+      if (strToLowerCase.includes("yes")) {
+        addEventListener("click", (e) => {
+          let zielEl = e.target.parentElement.parentElement;
+          let timetodelete = document.querySelector("#time");
+          timetodelete.textContent = "choose your next task, don't be lazy";
+          //console.log(zielEl);
+          zielEl.remove();
+        });
+      } else if (strToLowerCase.includes("no")) {
+        // return back
+        alert("good decision! let's finish the task!");
+      } else {
+        alert("please enter yer or not");
+        prompt(" please type yes or no");
+      }
     };
     kstop.addEventListener("click", stopTime);
   } else {
@@ -70,10 +89,9 @@ const keyCheck = (e) => {
 document.querySelector("form").addEventListener("submit", createTask);
 document.querySelector("form").addEventListener("submit", createTask);
 
-
 // function (timer) counting backwards – default 00:00
 
-// function of input range for time input (Omar)
+// function of input range for time input (Omar) (thanks to Roman)
 
 let range = document.querySelector('input[type="range"]');
 let timeondisplay = document.querySelector("#time");
@@ -82,7 +100,7 @@ let rangeValue = function () {
   let target = document.querySelector(".value");
   console.log();
   target.innerHTML = newValue;
-  timeondisplay.innerHTML = newValue;
+  timeondisplay.innerHTML = `${newValue}:00`;
 };
 
 range.addEventListener("input", rangeValue);
@@ -118,9 +136,7 @@ document.querySelectorAll(".start").forEach((el) =>
     // startTimer(inputUser, display);
   })
 );
-console.log(mycurrenttime);
 
-console.log(startTimer);
 //list items need buttons and timer
 
 /* END DAY FUNCTION (ALEX) */
@@ -153,6 +169,7 @@ function endDay() {
 endBtn.addEventListener("click", endDay);
 // connect everything so it actually works :)
 // >> do that together – before merging!
-
+// :00 on the duration part
 //FIX THE STOP BUTTON TO SAY HOW MANY MINUTES LEFT AND MAKE IT STOP THE TASK
+
 //AFTER THE END DAY TASK SUMM THE AMM OF MINUTES
