@@ -49,7 +49,7 @@ const keyCheck = (e) => {
   //console.log(event);
   if (e.key == "Enter") createTask(e);
 };
-document.querySelector("form").addEventListener("submit", createTask);
+document.querySelector(".userInput").addEventListener("submit", createTask);
 
 // function (timer) counting backwards – default 00:00
 
