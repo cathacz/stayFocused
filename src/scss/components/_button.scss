@@ -1,0 +1,23 @@
+// buttons in general
+button {
+  font-size: 0.8vw;
+  border: none;
+  background-color: $field-color43;
+  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  margin: 0.4rem;
+  flex-direction: row;
+  border-radius: 3px;
+}
+.endDay {
+  @include flex-center;
+}
+
+//create task button
+.skt {
+  font-size: 0.8vw;
+  border: none;
+  background-color: $field-color45;
+  border-radius: 3px;
+  padding: 0.6rem;
+  margin-top: 1rem;
+}
