@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  li {
+    @include flex-center;
+
+    justify-content: space-evenly;
+    flex-direction: column;
+    justify-items: center;
+    :nth-child(1) {
+      font-weight: bold;
+    }
+  }
+}
