@@ -133,7 +133,6 @@ input[type="range"]::-webkit-slider-thumb {
 .timer {
   .displayTimer {
     @include flex-center;
-
     height: 10vh;
     font-size: 5vw;
 

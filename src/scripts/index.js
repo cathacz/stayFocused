@@ -83,6 +83,10 @@ const createTask = (e) => {
         alert("please enter yer or not");
         prompt(" please type yes or no");
       }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f3aa7ccf68e57477ad7085b0bc472943bf751a33
     };
     kstop.addEventListener("click", stopTime);
   } else {
