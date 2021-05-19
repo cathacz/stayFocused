@@ -8,57 +8,60 @@
   </head>
   <body>
     <main>
+<!-- Title -->
       <div class="title">
-        <!-- temporary logo -->
-        <div><img src="./img/logo.png" /></div>
+
+        <div class="icon">
+          <img src="./icon/logo2.svg"/><h1>Stay <br/> Focused</h1>
+        </div> 
 
         
+        
         <h1>Stay Focused</h1>
+
         <h2>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus cumque
-          iusto quasi rem ad suscipit sunt porro placeat dolorem modi
-
+          <b>Stay Focused </b>  is an easy-to-use time and task management application that helps you to manage your tasks. Try <b>Stay Focused </b>   yourself to perform as efficiently as possible.
         </h2>
-
-
       </div>
-      <h3>Add new task</h3>
+<!-- New Task -->
+<div class="newTask">
+      <h3>Add a new task</h3>
       <div class="userInput">
       <div>
-      <form>  
+      <form> 
         <div class="nameTask">
-          <h4>Task name</h4>
+          <h4>What do you wanna do?</h4>
           <input type="text" placeholder="  Name your task" />
         </div>
       </div>
       <div>  
         <div class="setTime">
           <div>
-            <span><h4>Duration in minutes</h4></span><span class="value"></span>
-           
+            <span><h4>How long will it take you? <span class="value">0</span> minutes</h4></span></span>
           </div>
           <div class="range-cont"><input type="range" min="5" max="55" value="25" /></div>
         </div>
     </div>
+  </div>
+        <div class="create-task-btn"><input type="submit" value="Create Task" class="skt" />
+        </div>
       </div>
-
-        <div class="create-task-btn"><input type="submit" value="Create Task" class="skt" /></div>
-
-      </div>
-
+ </div>
+ <!-- Timer -->
       <div class="timer">
         <div class="displayAnimation"></div>
         <div class="displayTimer"><span id="time">00:00</span> </div>
-
-        
       </div>
+<!-- Task List -->
       <h3>Task List</h3>
       <div class="displayList">
         <ul class="taskList"></ul>
       </div>
 
-   
-      <div><button class="endDay">End Day</button></div>
+<!-- the end of the day -->
+      <div>
+        <button class="endDay">End Day</button>
+      </div>
     </main>
     
   
