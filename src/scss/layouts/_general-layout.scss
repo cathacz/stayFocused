@@ -3,98 +3,147 @@ main {
   margin-top: 5vh;
 }
 
-input[type="range"] {
-  display: flex;
-  -webkit-appearance: none;
-  background-color: #bdc3c7;
-  width: 230px;
-  height: 5px;
-  margin: 10px;
-  margin-left: 5px;
-  border-radius: 5px;
+div {
+  @include flex-center;
+  flex-direction: column;
 }
 
-.range-cont {
-  width: 250px;
-  height: 30px;
-  border: none;
-  box-shadow: 1px 3px 3px 0.1px grey;
-  border-radius: 5px;
-}
+h1 {
+  color: $main-text;
+  font-size: 3vw;
+  text-align: center;
 
-.duration-cont {
-  background-color: red;
+  background-image: linear-gradient(90deg, $field-color43, $field-color45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-img {
-  width: 250px;
+h2 {
+  color: $main-text;
+  font-size: 1.3vw;
+  text-align: center;
+  width: 55%;
+  margin-top: 1.2vw;
+  font-weight: 300;
 }
-
 h3 {
   color: $main-text;
-  font-size: 15px;
+  font-size: 1.3vw;
+  text-align: center;
+}
+h4 {
+  font-size: 1vw;
+  color: $sub-text;
+  margin-bottom: 0.8vw;
+}
+b {
+  background-image: linear-gradient(90deg, $field-color43, $field-color45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .title {
-  width: 100%;
-  height: 20%;
+  margin-top: 2vw;
+}
+.icon {
+  flex-direction: row;
+  justify-content: left;
+  align-self: flex-start;
+  float: left;
+}
+img {
+  width: 12vw;
+}
+.newTask {
+  background-color: $field-color44;
+  border-radius: 8px;
+  margin: 2rem 0 2rem 0;
+  padding: 1rem;
 }
 .userInput {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   flex-direction: row;
+  justify-content: space-evenly;
   width: 100%;
   height: 10vh;
   .nameTask,
   .setTime {
     @include flex-left;
     span {
-      display: flex;
+      // display: flex;
+      color: $main-text;
+      font-size: 1vw;
+      font-weight: 900;
+      margin-left: 0.2rem;
     }
     flex-direction: column;
-    margin: 20px 20px;
-    margin-left: 0;
-    margin-right: 50px;
-  }
-
-  h4 {
-    font-size: 12px;
-    color: $sub-text;
-    margin-bottom: 5px;
+    // margin: 20px 20px;
+    // margin-left: 0;
+    // margin-right: 50px;
   }
 }
-
-.nameTask input {
-  width: 250px;
-  height: 30px;
+.range-cont {
+  width: 25vw;
+  height: 2vw;
   border: none;
-  box-shadow: 1px 3px 3px 0.1px grey;
+  background-color: white;
+  box-shadow: 1px 3px 3px 0.1px $field-color42;
+  border-radius: 5px;
+}
+input[type="range"] {
+  display: flex;
+  -webkit-appearance: none;
+  background-color: $field-color43;
+  width: 94%;
+  height: 18%;
+  margin: 0.4rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: $field-color43;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+​ input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: white;
+  border: 2px solid $field-color42;
+}
+// WHY??
+​ input[type="range"]::-webkit-slider-thumb:active {
+  border: none;
+}
+.nameTask input {
+  width: 25vw;
+  height: 2vw;
+  border: none;
+  box-shadow: 1px 3px 3px 0.1px $field-color42;
   border-radius: 5px;
 }
 
 .create-task-btn {
   @include flex-center;
-  height: 80px;
+  // height: 80px;
 }
-.skt {
-  width: 130px;
-  height: 25px;
-}
+
 .timer {
-  border: olive 2px dashed;
-  width: 100%;
-  height: 20vh;
-  .displayAnimation {
-    border: lightcoral 2px dashed;
-    width: 88%;
-    height: 20vh;
-    display: none; //Animation Will Appear after creating tasks
-  }
   .displayTimer {
     @include flex-center;
+
+
+    height: 10vh;
+    font-size: 5vw;
+
     position: relative;
     border: lightsalmon 2px dashed;
     width: 100%;
     height: 20vh;
     font-size: 60px;
+
   }
 }
 // .newbox {
@@ -105,7 +154,17 @@ h3 {
   z-index: 99;
 }
 .displayList {
-  border: tomato 2px dashed;
-  width: 100%;
-  height: 20vh;
+  height: 50%;
+  overflow: scroll;
+}
+// .duration-cont {
+//   background-color: red;
+//   border: olive solid 99px;
+// }
+
+#time {
+  font-family: $time-font;
+}
+.value {
+  font-family: $time-font;
 }

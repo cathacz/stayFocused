@@ -83,6 +83,7 @@ const createTask = (e) => {
         alert("please enter yer or not");
         prompt(" please type yes or no");
       }
+
     };
     kstop.addEventListener("click", stopTime);
   } else {
@@ -158,10 +159,10 @@ const endBtn = document.querySelector(".endDay");
 
 //functions
 function endDay() {
-  var str = prompt("are you sure? please type yes or no");
+  var str = prompt("Are you a 100% sure? Please type yes or no");
   let strToLowerCase = str.toLowerCase();
   if (strToLowerCase.includes("yes")) {
-    alert("Thank You for trying! But do better next time!");
+    alert("At least you tried (but you crashed and burned...)");
     let ali = document.querySelectorAll("li");
     ali.forEach((el) => el.remove());
     let timetodelete = document.querySelector("#time");
@@ -170,10 +171,10 @@ function endDay() {
     balloondestroyer.forEach((el) => el.remove());
   } else if (strToLowerCase.includes("no")) {
     // return back
-    alert("good decision! let's finish these tasks!");
+    alert("Great decision! Let's finish these tasks! You can do it!");
   } else {
-    alert("please enter yer or not");
-    prompt(" please type yes or no");
+    alert(`Please enter "yes" or "no"`);
+    prompt(`Be so kind and type "yes" or "no"`);
   }
 }
 
