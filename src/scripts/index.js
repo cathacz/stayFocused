@@ -1,26 +1,43 @@
 // function (createTask) for "create task" to create new task in ul (ANGELOS)
+
+let kstart = "";
+let timing = "";
 const createTask = (e) => {
   e.preventDefault();
   let myData = document.querySelector("input").value;
 
   if (myData != "") {
-    let myTime = document.querySelector(".timer").value;
-    console.log(myTime);
-    // ftiaxnoume ena li
+    let myTime = document.querySelector('input[type="range"]').value;
+    getComputedStyle;
     let newTask = document.createElement("li");
-    //rixnoume to text pou egrapse o user sto input mas
+    newTask.classList.add("classforall");
     let texti = document.createTextNode(myData);
-    //vazoume me .appendChild() to text tou giouzer mesa sto list mas
+
     newTask.appendChild(texti);
-    //vazoume me .appendChild() to list item mas mesa sto taskList mas
+
     document.querySelector(".taskList").appendChild(newTask);
     document.querySelector("input").value = "";
-    //ftiaxnoume divaki me 2 koubia
+
     const newbox = document.createElement("div");
     newbox.classList.add("basics");
-    const kstart = document.createElement("button");
+    // kstart button fireTheTimer
+    kstart = document.createElement("button");
+    kstart.classList.add("start");
+    kstart.addEventListener("click", (e) => {
+      let mycurrenttime = e.target.previousElementSibling.textContent.slice(
+        0,
+        2
+      );
+
+      inputUser = 60 * +mycurrenttime;
+      display = document.querySelector("#time");
+      clearInterval(interval);
+      startTimer(inputUser, display);
+    });
     const kstop = document.createElement("button");
-    const timing = document.createElement("div");
+    timing = document.createElement("div");
+    timing.classList.add("task_time");
+
     timing.innerHTML = `${myTime} minutes`;
 
     kstart.innerHTML = "start";
@@ -32,43 +49,50 @@ const createTask = (e) => {
     newbox.appendChild(kstop);
 
     newTask.appendChild(newbox);
-    // Adding class
+    //kstart button , it starts the counter
 
-    kstart.classList.add("done");
-    // Complete function
-
-    // Complete function
-    // toggle will check if the class name exist, will remove it and if it's not will add it
+    ("are you sure? only _____ minutes left");
+    const stopTime = () => {
+      let messageForAlert = `are you sure? only ${timing.innerHTML}  left`;
+      alert(messageForAlert);
+    };
+    kstop.addEventListener("click", stopTime);
   } else {
-    document.querySelector("#myData").placeholder = "write here your task...";
+    document.querySelector("input").placeholder = "write here your task...";
   }
 };
+
 const keyCheck = (e) => {
   //console.log(event);
-  if (e.key == "Enter") addToGamwlist(e);
+  if (e.key == "Enter") createTask(e);
 };
+
 document.querySelector("form").addEventListener("submit", createTask);
+document.querySelector("form").addEventListener("submit", createTask);
+
 
 // function (timer) counting backwards – default 00:00
 
 // function of input range for time input (Omar)
 
 let range = document.querySelector('input[type="range"]');
-
+let timeondisplay = document.querySelector("#time");
 let rangeValue = function () {
   let newValue = range.value;
   let target = document.querySelector(".value");
+  console.log();
   target.innerHTML = newValue;
+  timeondisplay.innerHTML = newValue;
 };
 
 range.addEventListener("input", rangeValue);
-
-// function (startTime) that sets time of task(OMAR)
+let interval;
+//function (startTimer) that sets time of task(OMAR)
 const startTimer = (duration, display) => {
   let timer = duration,
     minutes,
     seconds;
-  setInterval(function () {
+  interval = setInterval(function () {
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
 
@@ -80,14 +104,24 @@ const startTimer = (duration, display) => {
     }
   }, 1000);
 };
-window.onload = function () {
-  let inputUser = 60 * 1,
-    display = document.querySelector("#time");
-  startTimer(inputUser, display);
-};
-// function (stopTime) that stops task >> alert "are you sure? only _____ minutes left" (CATHA)
+let myTime = document.querySelector('input[type="range"]');
+let mycurrenttime;
+let inputUser;
+document.querySelectorAll(".start").forEach((el) =>
+  el.addEventListener("click", (e) => {
+    console.log(e.target.previousElementSibling);
+    console.log(5454);
+    // mycurrenttime = document.querySelector('input[type="range"]').value;
+    // inputUser = 60 * +mycurrenttime;
+    // display = document.querySelector("#time");
+    // clearInterval(interval);
+    // startTimer(inputUser, display);
+  })
+);
+console.log(mycurrenttime);
 
-// list items need buttons and timer
+console.log(startTimer);
+//list items need buttons and timer
 
 /* END DAY FUNCTION (ALEX) */
 //selectors
@@ -99,14 +133,19 @@ function endDay() {
   let strToLowerCase = str.toLowerCase();
   if (strToLowerCase.includes("yes")) {
     alert("Thank You for trying! But do better next time!");
+    let ali = document.querySelectorAll("li");
+    ali.forEach((el) => el.remove());
     //show percentage
-    // function showPercentage () {
-    //    let sumTotalTime =  ? //Need "Create Task" variables from Angelos;
-    //    return totalTime;
-    // }
-  } else {
+    function showPercentage() {
+      let sumTotalTime; //Need "Create Task" variables from Angelos;
+      return sumTotalTime;
+    }
+  } else if (strToLowerCase.includes("no")) {
     // return back
     alert("good decision! let's finish these tasks!");
+  } else {
+    alert("please enter yer or not");
+    prompt(" please type yes or no");
   }
 }
 
@@ -114,3 +153,6 @@ function endDay() {
 endBtn.addEventListener("click", endDay);
 // connect everything so it actually works :)
 // >> do that together – before merging!
+
+//FIX THE STOP BUTTON TO SAY HOW MANY MINUTES LEFT AND MAKE IT STOP THE TASK
+//AFTER THE END DAY TASK SUMM THE AMM OF MINUTES

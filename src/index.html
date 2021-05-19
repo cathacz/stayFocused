@@ -9,60 +9,59 @@
   <body>
     <main>
       <div class="title">
+        <!-- temporary logo -->
+        <div><img src="./img/logo.png" /></div>
+
+        
         <h1>Stay Focused</h1>
-        <img
-          src="./icon/timeTask.svg"
-          alt="timeTask"
-          class="icon"
-          width="80px"
-        />
         <h2>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus cumque
           iusto quasi rem ad suscipit sunt porro placeat dolorem modi
-          repellendus doloribus voluptates at dignissimos architecto, dolor
-          cupiditate?
+
         </h2>
-      </div>
 
+
+      </div>
+      <h3>Add new task</h3>
       <div class="userInput">
-        <form>
+      <div>
+      <form>  
         <div class="nameTask">
-          <input
-            type="text"
-            name="userText"
-            placeholder="Name your task"
-            id="
-          myData"
-          />
+          <h4>Task name</h4>
+          <input type="text" placeholder="  Name your task" />
         </div>
-        <div class="duration">Time: <span class="value">25</span> minutes</div>
+      </div>
+      <div>  
         <div class="setTime">
-          <p>
-            set time here
-          </p>
-          <input type="range" min="5" max="55" value="25" class="timer" id="
-          myData"/>
+          <div>
+            <span><h4>Duration in minutes</h4></span><span class="value"></span>
+           
+          </div>
+          <div class="range-cont"><input type="range" min="5" max="55" value="25" /></div>
         </div>
+    </div>
+      </div>
 
-        <div><button>Create Task</button></div>
-        <div>
-          Task will be complete in <span id="time">01:00</span> minutes!!
-        </div>
-
-        <div><input type="submit" value="Create Task" class="endDay skt" /></div>
+        <div class="create-task-btn"><input type="submit" value="Create Task" class="skt" /></div>
 
       </div>
+
       <div class="timer">
         <div class="displayAnimation"></div>
-        <div class="displayTimer"></div>
+        <div class="displayTimer"><span id="time">00:00</span> </div>
+
+        
       </div>
+      <h3>Task List</h3>
       <div class="displayList">
         <ul class="taskList"></ul>
       </div>
-      <div><button type="submit" class="endDay skt">End Day</button></div>
+
+   
+      <div><button class="endDay">End Day</button></div>
     </main>
-
-
+    
+  
     <script src="./scripts/index.js"></script>
   </body>
 </html>
