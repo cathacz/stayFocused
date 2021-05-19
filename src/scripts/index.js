@@ -40,7 +40,7 @@ const createTask = (e) => {
       display = document.querySelector("#time");
       clearInterval(interval);
 
-      startTimer(inputUser, display);
+      startTimer(e, inputUser, display);
     });
     //our button for the stop
     kstop = document.createElement("button");
@@ -83,7 +83,6 @@ const createTask = (e) => {
         alert("please enter yer or not");
         prompt(" please type yes or no");
       }
-
     };
     kstop.addEventListener("click", stopTime);
   } else {
@@ -116,7 +115,8 @@ let rangeValue = function () {
 range.addEventListener("input", rangeValue);
 let interval;
 //function (startTimer) that sets time of task(OMAR)
-const startTimer = (duration, display) => {
+const startTimer = (e, duration, display) => {
+  // console.log(e.target);
   let timer = duration,
     minutes,
     seconds;
@@ -127,14 +127,28 @@ const startTimer = (duration, display) => {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     display.textContent = minutes + ":" + seconds;
-    if (--timer < 0) {
-      timer = duration;
-    }
-    if (timeondisplay.innerHTML === "00:00") {
-      balloon.style.opacity = "100%";
+
+    // if (--timer < 0) {
+    //   timer = duration;
+    // }
+
+    if (timer <= 0) {
+      clearInterval(interval);
+      document.querySelector("input").innerHTML = "Finished";
+      const balloon = document.querySelector(".balloon");
+      balloon.style.opacity = 0;
       balloon.style.transition = "6s";
+      setTimeout(() => balloon.remove(), 6000);
+    } else {
+      document.querySelector("input").innerHTML = timer + "remaining";
     }
-  }, 1000);
+    timer -= 1;
+
+    if (timeondisplay.innerHTML === "00:00") {
+      //  balloon.style.opacity = "0%";
+      //  balloon.style.transition = "6s";
+    }
+  }, 10);
 };
 let myTime = document.querySelector('input[type="range"]');
 let mycurrenttime;

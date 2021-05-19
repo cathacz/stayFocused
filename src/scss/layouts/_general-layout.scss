@@ -14,7 +14,7 @@ h1 {
   text-align: center;
 
   background-image: linear-gradient(90deg, $field-color43, $field-color45);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 h2 {
@@ -37,7 +37,7 @@ h4 {
 }
 b {
   background-image: linear-gradient(90deg, $field-color43, $field-color45);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .title {
@@ -133,8 +133,6 @@ input[type="range"]::-webkit-slider-thumb {
 .timer {
   .displayTimer {
     @include flex-center;
-
-
     height: 10vh;
     font-size: 5vw;
 
@@ -143,7 +141,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     height: 20vh;
     font-size: 60px;
-
   }
 }
 // .newbox {
