@@ -21,6 +21,12 @@ const createTask = (e) => {
 
     const newbox = document.createElement("div");
     newbox.classList.add("basics");
+    // for the balloon creation effect
+    let balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    let balloonroom = document.querySelector(".displayTimer");
+
+    balloonroom.appendChild(balloon);
     // kstart button fireTheTimer
     kstart = document.createElement("button");
     kstart.classList.add("start");
@@ -33,10 +39,13 @@ const createTask = (e) => {
       inputUser = 60 * +mycurrenttime;
       display = document.querySelector("#time");
       clearInterval(interval);
+
       startTimer(inputUser, display);
     });
+    //our button for the stop
     kstop = document.createElement("button");
     kstop.classList.add("toStopit");
+    //our time list
     timing = document.createElement("div");
     timing.classList.add("task_time");
 
@@ -53,7 +62,6 @@ const createTask = (e) => {
     newTask.appendChild(newbox);
     //kstop button , it deletes the task if thew user says yes
 
-    // ("are you sure? only _____ minutes left");
     const stopTime = () => {
       alert("are you sure? only few minutes left");
 
@@ -63,9 +71,10 @@ const createTask = (e) => {
         addEventListener("click", (e) => {
           let zielEl = e.target.parentElement.parentElement;
           let timetodelete = document.querySelector("#time");
-          timetodelete.textContent = "choose your next task, don't be lazy";
+          timetodelete.textContent = "00:00";
           //console.log(zielEl);
           zielEl.remove();
+          // balloon.remove();
         });
       } else if (strToLowerCase.includes("no")) {
         // return back
@@ -120,6 +129,10 @@ const startTimer = (duration, display) => {
     if (--timer < 0) {
       timer = duration;
     }
+    if (timeondisplay.innerHTML === "00:00") {
+      balloon.style.opacity = "100%";
+      balloon.style.transition = "6s";
+    }
   }, 1000);
 };
 let myTime = document.querySelector('input[type="range"]');
@@ -128,7 +141,7 @@ let inputUser;
 document.querySelectorAll(".start").forEach((el) =>
   el.addEventListener("click", (e) => {
     console.log(e.target.previousElementSibling);
-    console.log(5454);
+    //console.log(5454);
     // mycurrenttime = document.querySelector('input[type="range"]').value;
     // inputUser = 60 * +mycurrenttime;
     // display = document.querySelector("#time");
@@ -151,11 +164,10 @@ function endDay() {
     alert("Thank You for trying! But do better next time!");
     let ali = document.querySelectorAll("li");
     ali.forEach((el) => el.remove());
-    //show percentage
-    function showPercentage() {
-      let sumTotalTime; //Need "Create Task" variables from Angelos;
-      return sumTotalTime;
-    }
+    let timetodelete = document.querySelector("#time");
+    timetodelete.textContent = "choose your next task, don't be lazy";
+    let balloondestroyer = document.querySelectorAll(".balloon");
+    balloondestroyer.forEach((el) => el.remove());
   } else if (strToLowerCase.includes("no")) {
     // return back
     alert("good decision! let's finish these tasks!");

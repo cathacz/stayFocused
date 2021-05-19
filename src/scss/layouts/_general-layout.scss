@@ -90,11 +90,19 @@ h3 {
   }
   .displayTimer {
     @include flex-center;
+    position: relative;
     border: lightsalmon 2px dashed;
     width: 100%;
     height: 20vh;
     font-size: 60px;
   }
+}
+// .newbox {
+// }
+#time {
+  font-weight: bold;
+  position: absolute;
+  z-index: 99;
 }
 .displayList {
   border: tomato 2px dashed;
