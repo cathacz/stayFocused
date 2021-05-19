@@ -134,9 +134,24 @@ input[type="range"]::-webkit-slider-thumb {
   .displayTimer {
     @include flex-center;
 
+
     height: 10vh;
     font-size: 5vw;
+
+    position: relative;
+    border: lightsalmon 2px dashed;
+    width: 100%;
+    height: 20vh;
+    font-size: 60px;
+
   }
+}
+// .newbox {
+// }
+#time {
+  font-weight: bold;
+  position: absolute;
+  z-index: 99;
 }
 .displayList {
   height: 50%;
