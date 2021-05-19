@@ -2,6 +2,7 @@
 
 let kstart = "";
 let timing = "";
+let kstop = "";
 const createTask = (e) => {
   e.preventDefault();
   let myData = document.querySelector("input").value;
@@ -20,6 +21,12 @@ const createTask = (e) => {
 
     const newbox = document.createElement("div");
     newbox.classList.add("basics");
+    // for the balloon creation effect
+    let balloon = document.createElement("div");
+    balloon.classList.add("balloon");
+    let balloonroom = document.querySelector(".displayTimer");
+
+    balloonroom.appendChild(balloon);
     // kstart button fireTheTimer
     kstart = document.createElement("button");
     kstart.classList.add("start");
@@ -32,9 +39,13 @@ const createTask = (e) => {
       inputUser = 60 * +mycurrenttime;
       display = document.querySelector("#time");
       clearInterval(interval);
+
       startTimer(inputUser, display);
     });
-    const kstop = document.createElement("button");
+    //our button for the stop
+    kstop = document.createElement("button");
+    kstop.classList.add("toStopit");
+    //our time list
     timing = document.createElement("div");
     timing.classList.add("task_time");
 
@@ -49,12 +60,29 @@ const createTask = (e) => {
     newbox.appendChild(kstop);
 
     newTask.appendChild(newbox);
-    //kstart button , it starts the counter
+    //kstop button , it deletes the task if thew user says yes
 
-    ("are you sure? only _____ minutes left");
     const stopTime = () => {
-      let messageForAlert = `are you sure? only ${timing.innerHTML}  left`;
-      alert(messageForAlert);
+      alert("are you sure? only few minutes left");
+
+      var strForStop = prompt("are you sure? please type yes or no");
+      let strToLowerCase = strForStop.toLowerCase();
+      if (strToLowerCase.includes("yes")) {
+        addEventListener("click", (e) => {
+          let zielEl = e.target.parentElement.parentElement;
+          let timetodelete = document.querySelector("#time");
+          timetodelete.textContent = "00:00";
+          //console.log(zielEl);
+          zielEl.remove();
+          // balloon.remove();
+        });
+      } else if (strToLowerCase.includes("no")) {
+        // return back
+        alert("good decision! let's finish the task!");
+      } else {
+        alert("please enter yer or not");
+        prompt(" please type yes or no");
+      }
     };
     kstop.addEventListener("click", stopTime);
   } else {
@@ -70,10 +98,9 @@ const keyCheck = (e) => {
 document.querySelector("form").addEventListener("submit", createTask);
 document.querySelector("form").addEventListener("submit", createTask);
 
-
 // function (timer) counting backwards – default 00:00
 
-// function of input range for time input (Omar)
+// function of input range for time input (Omar) (thanks to Roman)
 
 let range = document.querySelector('input[type="range"]');
 let timeondisplay = document.querySelector("#time");
@@ -82,7 +109,7 @@ let rangeValue = function () {
   let target = document.querySelector(".value");
   console.log();
   target.innerHTML = newValue;
-  timeondisplay.innerHTML = newValue;
+  timeondisplay.innerHTML = `${newValue}:00`;
 };
 
 range.addEventListener("input", rangeValue);
@@ -102,6 +129,10 @@ const startTimer = (duration, display) => {
     if (--timer < 0) {
       timer = duration;
     }
+    if (timeondisplay.innerHTML === "00:00") {
+      balloon.style.opacity = "100%";
+      balloon.style.transition = "6s";
+    }
   }, 1000);
 };
 let myTime = document.querySelector('input[type="range"]');
@@ -110,7 +141,7 @@ let inputUser;
 document.querySelectorAll(".start").forEach((el) =>
   el.addEventListener("click", (e) => {
     console.log(e.target.previousElementSibling);
-    console.log(5454);
+    //console.log(5454);
     // mycurrenttime = document.querySelector('input[type="range"]').value;
     // inputUser = 60 * +mycurrenttime;
     // display = document.querySelector("#time");
@@ -118,9 +149,7 @@ document.querySelectorAll(".start").forEach((el) =>
     // startTimer(inputUser, display);
   })
 );
-console.log(mycurrenttime);
 
-console.log(startTimer);
 //list items need buttons and timer
 
 /* END DAY FUNCTION (ALEX) */
@@ -135,11 +164,10 @@ function endDay() {
     alert("Thank You for trying! But do better next time!");
     let ali = document.querySelectorAll("li");
     ali.forEach((el) => el.remove());
-    //show percentage
-    function showPercentage() {
-      let sumTotalTime; //Need "Create Task" variables from Angelos;
-      return sumTotalTime;
-    }
+    let timetodelete = document.querySelector("#time");
+    timetodelete.textContent = "choose your next task, don't be lazy";
+    let balloondestroyer = document.querySelectorAll(".balloon");
+    balloondestroyer.forEach((el) => el.remove());
   } else if (strToLowerCase.includes("no")) {
     // return back
     alert("good decision! let's finish these tasks!");
@@ -153,6 +181,7 @@ function endDay() {
 endBtn.addEventListener("click", endDay);
 // connect everything so it actually works :)
 // >> do that together – before merging!
-
+// :00 on the duration part
 //FIX THE STOP BUTTON TO SAY HOW MANY MINUTES LEFT AND MAKE IT STOP THE TASK
+
 //AFTER THE END DAY TASK SUMM THE AMM OF MINUTES
