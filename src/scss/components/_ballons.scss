@@ -80,15 +80,3 @@
 .balloon:nth-child(5):before {
   color: $field-color41;
 }
-
-// @for $i from 0 to 5 {
-//   &:nth-child(#{$i}) {
-//     color: rgb(
-//       random($field-color41),
-//       random($field-color42),
-//       random($field-color43),
-//       random($field-color44),
-//       random($field-color45)
-//     );
-//   }
-// }

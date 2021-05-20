@@ -1,9 +1,6 @@
 main {
   width: 65vw;
-  margin-top: 2px;
-  // display: flex;
-  // flex-direction: column;
-  // flex-wrap: wrap;
+  margin-top: 0.2vw;
 }
 
 div {
@@ -16,7 +13,7 @@ h1 {
   font-size: 3vw;
   text-align: center;
 
-  background-image: linear-gradient(90deg, $field-color43, $field-color45);
+  background-image: linear-gradient(45deg, $field-color43, $field-color45);
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -42,7 +39,7 @@ h4 {
   margin-bottom: 0.8vw;
 }
 b {
-  background-image: linear-gradient(90deg, $field-color43, $field-color45);
+  background-image: linear-gradient(45deg, $field-color43, $field-color45);
   background-clip: text;
   -webkit-background-clip: text;
 
@@ -141,21 +138,17 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .timer {
+  height: 25vh;
   .displayTimer {
     @include flex-center;
-
     padding: 2vw;
-
     height: 15vh;
-
     font-size: 5vw;
-
     position: relative;
     // border: lightsalmon 2px dashed;
     // width: 100%;
     height: auto;
     font-size: 60px;
-
     flex-direction: row;
   }
 }
@@ -168,9 +161,12 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 99;
 }
 .displayList {
+  @include flex-center;
+  flex-flow: column;
   margin: 0.8vw;
+  // height: 25vh;
   // width: 100%;
-  // position: absolute;
+  // position: relative;
   // margin-left: 50%;
   // margin-right: 50%;
 }
