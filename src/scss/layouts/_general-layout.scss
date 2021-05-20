@@ -1,6 +1,9 @@
 main {
   width: 65vw;
-  margin-top: 5vh;
+  margin-top: 2px;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
 }
 
 div {
@@ -143,7 +146,7 @@ input[type="range"]::-webkit-slider-thumb {
 
     padding: 2vw;
 
-    height: 10vh;
+    height: 15vh;
 
     font-size: 5vw;
 
