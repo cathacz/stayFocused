@@ -26,6 +26,7 @@ h2 {
   font-weight: 300;
 }
 h3 {
+  margin-top: 1rem;
   color: $main-text;
   font-size: 1.3vw;
   text-align: center;
@@ -113,11 +114,13 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: white;
   border: 2px solid $field-color42;
 }
+
 // WHY??
 ​ input[type="range"]::-webkit-slider-thumb:active {
   border: none;
 }
 .nameTask input {
+  font-size: 0.9vw;
   width: 25vw;
   height: 2vw;
   border: none;
@@ -133,20 +136,19 @@ input[type="range"]::-webkit-slider-thumb {
 .timer {
   .displayTimer {
     @include flex-center;
-
-
-    height: 10vh;
+    padding: 2vw;
     font-size: 5vw;
 
     position: relative;
-    border: lightsalmon 2px dashed;
-    width: 100%;
-    height: 20vh;
+    // border: lightsalmon 2px dashed;
+    // width: 100%;
+    height: auto;
     font-size: 60px;
-
+    flex-direction: row;
   }
 }
 // .newbox {
+//   background-color: hotpink;
 // }
 #time {
   font-weight: bold;
@@ -154,8 +156,11 @@ input[type="range"]::-webkit-slider-thumb {
   z-index: 99;
 }
 .displayList {
-  height: 50%;
-  overflow: scroll;
+  margin: 0.8vw;
+  // width: 100%;
+  // position: absolute;
+  // margin-left: 50%;
+  // margin-right: 50%;
 }
 // .duration-cont {
 //   background-color: red;

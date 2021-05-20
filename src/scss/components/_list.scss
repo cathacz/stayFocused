@@ -1,13 +1,49 @@
 ul {
   list-style: none;
+  @include flex-center;
+  flex-direction: row;
+  width: 60vw;
   li {
-    @include flex-center;
-
+    margin: 1rem;
+    padding: 0.4rem;
+    // @include flex-center;
+    font-size: 0.9vw;
     justify-content: space-evenly;
     flex-direction: column;
     justify-items: center;
-    :nth-child(1) {
-      font-weight: bold;
+    :nth-child(0) {
+      font-size: 3rem;
+    }
+    :nth-child(2),
+    :nth-child(3) {
+      display: inline-flex;
+      flex-direction: row;
     }
   }
 }
+.classforall {
+  @include flex-center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  // background-color: tomato;
+  width: 100%;
+}
+
+.start {
+  background-color: $field-color45;
+}
+.toStopit {
+  background-color: $field-color42;
+}
+// .task_time {
+//   background-color: burlywood;
+// }
+.taskList {
+  // background-color: deeppink;
+  @include flex-center;
+  flex-direction: row;
+}
+// .basics {
+//   @include flex-center;
+//   flex-direction: row;
+// }

@@ -83,7 +83,6 @@ const createTask = (e) => {
         alert("please enter yer or not");
         prompt(" please type yes or no");
       }
-
     };
     kstop.addEventListener("click", stopTime);
   } else {
@@ -186,3 +185,15 @@ endBtn.addEventListener("click", endDay);
 //FIX THE STOP BUTTON TO SAY HOW MANY MINUTES LEFT AND MAKE IT STOP THE TASK
 
 //AFTER THE END DAY TASK SUMM THE AMM OF MINUTES
+
+// catha did some stuff too
+
+var colors = [
+  "$field-color41",
+  `$field-color42`,
+  "$field-color43",
+  "$field-color44",
+  "$field-color45",
+];
+var random_color = colors[Math.floor(Math.random() * colors.length)];
+document.querySelector(".balloon").style.color = random_color;
