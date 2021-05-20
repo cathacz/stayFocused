@@ -15,8 +15,6 @@ body {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,27 +22,61 @@ body {
 
 ul {
   list-style: none;
-}
-ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  width: 60vw;
+}
+ul li {
+  margin: 1rem;
+  padding: 0.4rem;
+  font-size: 0.9vw;
   justify-content: space-evenly;
   flex-direction: column;
   justify-items: center;
 }
-ul li :nth-child(1) {
-  font-weight: bold;
+ul li :nth-child(0) {
+  font-size: 3rem;
+}
+ul li :nth-child(2),
+ul li :nth-child(3) {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.classforall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.start {
+  background-color: #8c876c;
+}
+
+.toStopit {
+  background-color: #c99c99;
+}
+
+.taskList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 button {
-  font-size: 0.8vw;
+  font-size: 1vw;
   border: none;
   background-color: #f2bbaf;
-  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
   margin: 0.4rem;
   flex-direction: row;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .endDay {
@@ -54,7 +86,7 @@ button {
 }
 
 .skt {
-  font-size: 0.8vw;
+  font-size: 0.9vw;
   border: none;
   background-color: #8c876c;
   border-radius: 3px;
@@ -65,9 +97,9 @@ button {
 .balloon {
   position: absolute;
   display: inline-block;
-  width: 120px;
-  height: 145px;
-  background: #799ed2;
+  width: 8vw;
+  height: 10vw;
+  background: #c99c99;
   border-radius: 80%;
   position: relative;
   margin: 20px 30px;
@@ -92,7 +124,7 @@ button {
 .balloon:before {
   content: "▲";
   font-size: 20px;
-  color: #5979a6;
+  color: #c99c99;
   display: block;
   text-align: center;
   width: 100%;
@@ -112,44 +144,44 @@ button {
 }
 
 .balloon:nth-child(2) {
-  background: #8882c9;
+  background: #e8e4c7;
   animation-duration: 3.5s;
 }
 
 .balloon:nth-child(2):before {
-  color: #8882c9;
+  color: #e8e4c7;
 }
 
 .balloon:nth-child(3) {
-  background: #66cc86;
+  background: #f2bbaf;
   animation-duration: 3s;
 }
 
 .balloon:nth-child(3):before {
-  color: #59a671;
+  color: #f2bbaf;
 }
 
 .balloon:nth-child(4) {
-  background: #c9c85e;
+  background: #8c876c;
   animation-duration: 4.5s;
 }
 
 .balloon:nth-child(4):before {
-  color: #a9a860;
+  color: #8c876c;
 }
 
 .balloon:nth-child(5) {
-  background: #ce8355;
+  background: #593f3b;
   animation-duration: 5s;
 }
 
 .balloon:nth-child(5):before {
-  color: #a96942;
+  color: #593f3b;
 }
 
 main {
   width: 65vw;
-  margin-top: 5vh;
+  margin-top: 0.2vw;
 }
 
 div {
@@ -163,7 +195,8 @@ h1 {
   color: #000000;
   font-size: 3vw;
   text-align: center;
-  background-image: linear-gradient(90deg, #f2bbaf, #8c876c);
+  background-image: linear-gradient(45deg, #f2bbaf, #8c876c);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -178,6 +211,7 @@ h2 {
 }
 
 h3 {
+  margin-top: 1rem;
   color: #000000;
   font-size: 1.3vw;
   text-align: center;
@@ -190,7 +224,8 @@ h4 {
 }
 
 b {
-  background-image: linear-gradient(90deg, #f2bbaf, #8c876c);
+  background-image: linear-gradient(45deg, #f2bbaf, #8c876c);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -279,6 +314,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .nameTask input {
+  font-size: 0.9vw;
   width: 25vw;
   height: 2vw;
   border: none;
@@ -296,13 +332,12 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  height: 10vh;
+  padding: 2vw;
   font-size: 5vw;
   position: relative;
-  width: 100%;
-  height: 20vh;
+  height: auto;
   font-size: 60px;
+  flex-direction: row;
 }
 
 #time {
@@ -312,8 +347,11 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .displayList {
-  height: 50%;
-  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  margin: 0.8vw;
 }
 
 #time {
