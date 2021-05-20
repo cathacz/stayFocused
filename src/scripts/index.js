@@ -129,11 +129,18 @@ const startTimer = (duration, display) => {
     if (--timer < 0) {
       timer = duration;
     }
+    if (timer <= 0) {
+      clearInterval(interval);
+      document.querySelector("input").innerHTML = "Finished";
+    } else {
+      document.querySelector("input").innerHTML = timer + "remaining";
+    }
+    timer -= 1;
     if (timeondisplay.innerHTML === "00:00") {
       balloon.style.opacity = "100%";
       balloon.style.transition = "6s";
     }
-  }, 1000);
+  }, 10);
 };
 let myTime = document.querySelector('input[type="range"]');
 let mycurrenttime;
