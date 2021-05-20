@@ -1,9 +1,9 @@
 .balloon {
   position: absolute;
   display: inline-block;
-  width: 120px;
-  height: 145px;
-  background: hsl(215, 50%, 65%);
+  width: 8vw;
+  height: 10vw;
+  background: $field-color42;
   border-radius: 80%;
   position: relative;
 
@@ -29,7 +29,8 @@
 .balloon:before {
   content: "▲";
   font-size: 20px;
-  color: hsl(215, 30%, 50%);
+  color: $field-color42;
+
   display: block;
   text-align: center;
   width: 100%;
@@ -49,33 +50,45 @@
 }
 
 .balloon:nth-child(2) {
-  background: hsl(245, 40%, 65%);
+  background: $field-color44;
   animation-duration: 3.5s;
 }
 .balloon:nth-child(2):before {
-  color: hsl(245, 40%, 65%);
+  color: $field-color44;
 }
 
 .balloon:nth-child(3) {
-  background: hsl(139, 50%, 60%);
+  background: $field-color43;
   animation-duration: 3s;
 }
 .balloon:nth-child(3):before {
-  color: hsl(139, 30%, 50%);
+  color: $field-color43;
 }
 
 .balloon:nth-child(4) {
-  background: hsl(59, 50%, 58%);
+  background: $field-color45;
   animation-duration: 4.5s;
 }
 .balloon:nth-child(4):before {
-  color: hsl(59, 30%, 52%);
+  color: $field-color45;
 }
 
 .balloon:nth-child(5) {
-  background: hsl(23, 55%, 57%);
+  background: $field-color41;
   animation-duration: 5s;
 }
 .balloon:nth-child(5):before {
-  color: hsl(23, 44%, 46%);
+  color: $field-color41;
 }
+
+// @for $i from 0 to 5 {
+//   &:nth-child(#{$i}) {
+//     color: rgb(
+//       random($field-color41),
+//       random($field-color42),
+//       random($field-color43),
+//       random($field-color44),
+//       random($field-color45)
+//     );
+//   }
+// }
