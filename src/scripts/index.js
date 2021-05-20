@@ -40,7 +40,7 @@ const createTask = (e) => {
       display = document.querySelector("#time");
       clearInterval(interval);
 
-      startTimer(e, inputUser, display);
+      startTimer(inputUser, display);
     });
     //our button for the stop
     kstop = document.createElement("button");
@@ -63,9 +63,9 @@ const createTask = (e) => {
     //kstop button , it deletes the task if thew user says yes
 
     const stopTime = () => {
-      alert("are you sure? only few minutes left");
+      alert("Are you sure? There are only a few minutes left!");
 
-      var strForStop = prompt("are you sure? please type yes or no");
+      var strForStop = prompt(`Are you really sure? Please type "yes" or "no"`);
       let strToLowerCase = strForStop.toLowerCase();
       if (strToLowerCase.includes("yes")) {
         addEventListener("click", (e) => {
@@ -78,15 +78,15 @@ const createTask = (e) => {
         });
       } else if (strToLowerCase.includes("no")) {
         // return back
-        alert("good decision! let's finish the task!");
+        alert("Great decision! Let's finish that task!");
       } else {
-        alert("please enter yer or not");
-        prompt(" please type yes or no");
+        alert(`Please type "yes" or "no"`);
+        prompt(`Please type "yes" or "no"`);
       }
     };
     kstop.addEventListener("click", stopTime);
   } else {
-    document.querySelector("input").placeholder = "write here your task...";
+    document.querySelector("input").placeholder = "what do you wanna do next?";
   }
 };
 
@@ -115,8 +115,7 @@ let rangeValue = function () {
 range.addEventListener("input", rangeValue);
 let interval;
 //function (startTimer) that sets time of task(OMAR)
-const startTimer = (e, duration, display) => {
-  // console.log(e.target);
+const startTimer = (duration, display) => {
   let timer = duration,
     minutes,
     seconds;
@@ -127,28 +126,14 @@ const startTimer = (e, duration, display) => {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
     display.textContent = minutes + ":" + seconds;
-
-    // if (--timer < 0) {
-    //   timer = duration;
-    // }
-
-    if (timer <= 0) {
-      clearInterval(interval);
-      document.querySelector("input").innerHTML = "Finished";
-      const balloon = document.querySelector(".balloon");
-      balloon.style.opacity = 0;
-      balloon.style.transition = "6s";
-      setTimeout(() => balloon.remove(), 6000);
-    } else {
-      document.querySelector("input").innerHTML = timer + "remaining";
+    if (--timer < 0) {
+      timer = duration;
     }
-    timer -= 1;
-
     if (timeondisplay.innerHTML === "00:00") {
-      //  balloon.style.opacity = "0%";
-      //  balloon.style.transition = "6s";
+      balloon.style.opacity = "100%";
+      balloon.style.transition = "6s";
     }
-  }, 100);
+  }, 1000);
 };
 let myTime = document.querySelector('input[type="range"]');
 let mycurrenttime;
@@ -173,14 +158,13 @@ const endBtn = document.querySelector(".endDay");
 
 //functions
 function endDay() {
-  var str = prompt("Are you a 100% sure? Please type yes or no");
+  var str = prompt(`Are you a 100% sure? Please type "yes" or "no"`);
   let strToLowerCase = str.toLowerCase();
   if (strToLowerCase.includes("yes")) {
     alert("At least you tried (but you crashed and burned...)");
     let ali = document.querySelectorAll("li");
     ali.forEach((el) => el.remove());
     let timetodelete = document.querySelector("#time");
-    timetodelete.textContent = "choose your next task, don't be lazy";
     let balloondestroyer = document.querySelectorAll(".balloon");
     balloondestroyer.forEach((el) => el.remove());
   } else if (strToLowerCase.includes("no")) {
@@ -201,14 +185,13 @@ endBtn.addEventListener("click", endDay);
 
 //AFTER THE END DAY TASK SUMM THE AMM OF MINUTES
 
-// catha did some stuff too
-
-var colors = [
-  "$field-color41",
-  `$field-color42`,
-  "$field-color43",
-  "$field-color44",
-  "$field-color45",
-];
-var random_color = colors[Math.floor(Math.random() * colors.length)];
-document.querySelector(".balloon").style.color = random_color;
+// maybe next life
+// var colors = [
+//   "$field-color41",
+//  $field-color42 ``,
+//   "$field-color43",
+//   "$field-color44",
+//   "$field-color45",
+// ];
+// var random_color = colors[Math.floor(Math.random() * colors.length)];
+// document.querySelector(".balloon").style.color = random_color;
