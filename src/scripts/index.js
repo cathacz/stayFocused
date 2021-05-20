@@ -148,7 +148,7 @@ const startTimer = (e, duration, display) => {
       //  balloon.style.opacity = "0%";
       //  balloon.style.transition = "6s";
     }
-  }, 10);
+  }, 100);
 };
 let myTime = document.querySelector('input[type="range"]');
 let mycurrenttime;
